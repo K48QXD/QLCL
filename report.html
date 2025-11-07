@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo: HTQL Chất lượng (ISO 9001) cho Dự án Đầu tư công</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Sử dụng font Inter cho toàn bộ trang */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+        /* === THÊM MỚI: CUỘN MƯỢT VÀ NEO CHO THANH STICKY === */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Đảm bảo khi nhảy section, tiêu đề không bị thanh nav che mất */
+        section[id] {
+            scroll-margin-top: 5rem; /* 80px */
+        }
+        /* === KẾT THÚC THÊM MỚI === */
+        
+        /* Căn chỉnh bảng cho dễ đọc hơn */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #e2e8f0; /* gray-300 */
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            border: 1px solid #e2e8f0; /* gray-300 */
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+            /* Thay đổi: Nền teal nhạt và chữ đậm hơn cho tiêu đề bảng */
+            background-color: #f0fdfa; /* bg-teal-50 */
+            color: #134e4a; /* text-teal-900 */
+            font-weight: 700;
+        }
+        /* Thêm một số kiểu cho phần tham khảo */
+        .reference-list p {
+            margin-bottom: 0.75rem; /* 12px */
+            padding-left: 2.5rem; /* 40px */
+            position: relative;
+        }
+        .reference-list p::before {
+            content: attr(data-ref);
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            /* Thay đổi: Đồng bộ màu tham chiếu với màu chủ đạo */
+            color: #0d9488; /* text-teal-700 */
+        }
+        /* Xử lý các số tham chiếu siêu nhỏ */
+        sup {
+            font-size: 0.65em;
+            vertical-align: super;
+            margin-left: 1px;
+            color: #6b7280; /* gray-500 */
+            line-height: 1;
+        }
+        /* Tùy chỉnh cho tiêu đề */
+        h1 {
+            font-size: 1.875rem; /* 2xl */
+            line-height: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        /* Thay đổi: H2 nổi bật hơn với đường viền trái màu chủ đạo */
+        h2 {
+            font-size: 1.5rem; /* xl */
+            line-height: 2rem;
+            font-weight: 700; /* Đậm hơn */
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0d9488; /* text-teal-700 */
+            border-left: 4px solid #0d9488; /* viền trái teal-700 */
+            padding-left: 0.75rem; /* pl-3 */
+            /* border-bottom: 2px solid #e5e7eb; Bỏ viền dưới */
+        }
+        /* Thay đổi: h3 cũng mang màu chủ đạo */
+        h3 {
+            font-size: 1.25rem; /* lg */
+            line-height: 1.75rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #115e59; /* text-teal-800 */
+        }
+    </style>
+    <!-- Tải font Inter từ Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800"> <!-- Xóa padding p-4 md:p-8 khỏi body -->
+
+    <!-- === THÊM MỚI: THANH ĐIỀU HƯỚNG STICKY === -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md w-full">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex justify-center items-center space-x-6 md:space-x-10 h-16">
+                <!-- Sử dụng màu xanh (teal) đồng bộ với báo cáo -->
+                <a href="#tom-tat" class="text-sm md:text-base font-semibold text-teal-700 hover:text-teal-900 transition-colors duration-200">Tóm tắt</a>
+                <a href="#gioi-thieu" class="text-sm md:text-base font-semibold text-teal-700 hover:text-teal-900 transition-colors duration-200">Giới thiệu</a>
+                <a href="#phuong-phap" class="text-sm md:text-base font-semibold text-teal-700 hover:text-teal-900 transition-colors duration-200">Phương pháp</a>
+                <a href="#ket-qua" class="text-sm md:text-base font-semibold text-teal-700 hover:text-teal-900 transition-colors duration-200">Kết quả</a>
+                <a href="#ket-luan" class="text-sm md:text-base font-semibold text-teal-700 hover:text-teal-900 transition-colors duration-200">Kết luận</a>
+                <a href="#tai-lieu" class="text-sm md:text-base font-semibold text-teal-700 hover:text-teal-900 transition-colors duration-200">Tài liệu</a>
+            </div>
+        </div>
+    </nav>
+    <!-- === KẾT THÚC THÊM MỚI === -->
+
+    <!-- Container chính của báo cáo -->
+    <!-- Thay đổi: Thêm bóng đổ rõ hơn (shadow-xl) -->
+    <!-- Thêm mt-8 để tạo khoảng cách với thanh nav -->
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-12 rounded-lg shadow-xl mt-8">
+
+        <!-- Phần Thông tin đầu trang -->
+        <!-- Thay đổi: Thêm nền xám nhạt cho phần header để tách biệt -->
+        <header class="text-center mb-10 p-8 bg-gray-50 rounded-t-lg">
+            <p class="text-lg font-semibold text-gray-700">TRƯỜNG ĐẠI HỌC BÁCH KHOA - ĐẠI HỌC ĐÀ NẴNG</p>
+            <p class="text-lg font-semibold text-gray-700 mb-6">KHOA QUẢN LÝ DỰ ÁN</p>
+            
+            <!-- Thay đổi: Đổi màu tiêu đề phụ sang màu teal chủ đạo -->
+            <p class="text-2xl font-bold text-teal-700">BÁO CÁO CHUYÊN ĐỀ</p>
+            <p class="text-md text-gray-600 mb-6">MÔN HỌC: QUẢN LÝ CHẤT LƯỢNG XÂY DỰNG</p>
+
+            <!-- Thay đổi: Đổi màu tiêu đề chính sang màu teal đậm -->
+            <h1 class="text-3xl font-bold text-teal-800 leading-tight uppercase">
+                ĐỀ TÀI: <br>
+                Xây dựng Hệ thống Quản lý Chất lượng (ISO 9001) cho các Dự án Đầu tư công trên địa bàn thành phố Đà Nẵng dự kiến áp dụng từ ngày 01/01/2026
+            </h1>
+            
+            <div class="border-t border-b border-gray-200 py-6 mt-8 text-left grid grid-cols-2 gap-x-8">
+                <div>
+                    <p class="text-gray-700"><strong class="font-semibold">GVHD:</strong> TS. Mai Anh Đức</p>
+                    <p class="text-gray-700"><strong class="font-semibold">Lớp:</strong> K48.QXD</p>
+                </div>
+                <div>
+                    <p class="text-gray-700"><strong class="font-semibold">Học viên:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Đỗ Văn Thạo</li>
+                        <li>Trần Ngọc Hiếu</li>
+                        <li>Trần Quốc Việt</li>
+                        <li>Võ Quang Chức</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="text-gray-600 mt-6">Đà Nẵng, tháng 11 năm 2025</p>
+        </header>
+
+        <!-- Nội dung chính của báo cáo -->
+        <main>
+            <!-- Tóm tắt -->
+            <!-- === THÊM ID CHO SECTION === -->
+            <section class="mb-8" id="tom-tat">
+                <!-- Thay đổi: Cập nhật màu cho khối tóm tắt -->
+                <div class="bg-teal-50 border-l-4 border-teal-500 p-6 rounded-r-lg">
+                    <h2 class="text-2xl font-bold text-teal-900 mt-0 pt-0 border-none mb-4">TÓM TẮT</h2>
+                    <p class="mb-4">
+                        Quản lý chất lượng (QLCL) đã phát triển qua nhiều giai đoạn, từ Kiểm soát Chất lượng (QC) đến Quản lý Chất lượng Toàn diện (TQM). Tuy nhiên, thực tế tại Việt Nam cho thấy việc áp dụng các hệ thống như Tiêu chuẩn ISO 9001 thường mang tính hình thức. Trong bối cảnh triển khai mô hình <strong class="font-semibold">chính quyền 02 cấp</strong> (Nghị quyết 303/NQ-CP) và <strong class="font-semibold">sáp nhập 94 đơn vị hành chính cấp xã mới</strong> (theo Báo Điện tử Chính phủ), đồng thời phân cấp mạnh mẽ thẩm quyền cho UBND cấp xã từ 01/01/2026 (theo Nghị định 140/2025/NĐ-CP, Quyết định số 71/2025/QĐ-UBND, Quyết định số 63/2025/QĐ-UBND), việc xây dựng một quy trình QLCL hiệu quả, đồng bộ cho 94 đơn vị này trở nên cấp bách.
+                    </p>
+                    <p class="mb-4">
+                        Báo cáo này phân tích và đề xuất một quy trình quản lý 8 bước, dựa trên cấu trúc 10 điều khoản của Tiêu chuẩn ISO 9001:2015 và chu trình PDCA (Plan-Do-Check-Act). Quy trình này tích hợp khung pháp lý cốt lõi (Nghị định 06/2021/NĐ-CP, Nghị định 254/2025/NĐ-CP,...) và các hướng dẫn thực tiễn (Văn bản số 1034/STC-DAĐTC), nhằm chuyển hóa các yêu cầu của Chủ đầu tư thành các đặc trưng kỹ thuật có thể kiểm soát được thông qua một <strong class="font-semibold">Kế hoạch Chất lượng (KCL)</strong> và <strong class="font-semibold">Kế hoạch Nghiệm thu/Thí nghiệm (KNT)</strong> chi tiết tại công trường.
+                    </p>
+                    <p class="font-medium text-teal-800">
+                        <strong class="font-semibold">Từ khóa:</strong> Hệ thống quản lý chất lượng; ISO 9001; PDCA; dự án đầu tư công; chính quyền 02 cấp; 94 đơn vị hành chính mới; phân cấp; Nghị định 06/2021/NĐ-CP; Kế hoạch Chất lượng (KCL); Kế hoạch Nghiệm thu/Thí nghiệm (KNT).
+                    </p>
+                </div>
+            </section>
+            <!-- === KẾT THÚC KHÔI PHỤC TÓM TẮT === -->
+            
+            <!-- === KHÔI PHỤC MỤC 1 === -->
+            <!-- === THÊM ID CHO SECTION === -->
+            <section id="gioi-thieu">
+                <h2>1. TỔNG QUAN VỀ BỐI CẢNH QUẢN LÝ CHẤT LƯỢNG</h2>
+                <p class="mb-4">
+                    Công trình xây dựng là một loại hàng hóa đặc biệt. Chất lượng các công trình xây dựng ở Việt Nam dường như chưa được cải thiện như kỳ vọng, mặc dù các nhà thầu đã áp dụng hệ thống ISO. Nguyên nhân của vấn đề này bao gồm các quan điểm sai lầm như "chất lượng cao đòi hỏi chi phí lớn" hay việc xem đăng ký ISO chủ yếu nhằm mục đích tiếp thị [1].
+                </p>
+                
+                <!-- Bối cảnh sáp nhập 94 ĐVHC mới -->
+                <div class="p-4 my-6 bg-gray-100 rounded-lg border border-gray-300">
+                    <p class="mb-3">
+                        Bối cảnh này càng trở nên phức tạp và cấp bách khi TP. Đà Nẵng (mới) được tái cấu trúc không gian đô thị. Theo Báo Đầu tư [20], sau sáp nhập với Quảng Nam, Đà Nẵng trở thành Thành phố trực thuộc Trung ương có diện tích lớn nhất cả nước, với quy mô dân số hơn 3 triệu người, tạo ra không gian phát triển đô thị rộng mở.
+                    </p>
+                    <p class="mb-3">
+                        Song song đó, theo Báo Điện tử Chính phủ [19], Đề án sắp xếp đơn vị hành chính (ĐVHC) cấp xã của thành phố Đà Nẵng (mới) sẽ hình thành <strong class="font-semibold">94 đơn vị hành chính cấp xã mới</strong> (bao gồm 23 phường, 70 xã, và 1 đặc khu).
+                    </p>
+                </div>
+
+                <p class="mb-4">
+                    Thách thức này đòi hỏi phải có một hệ thống quản lý chuẩn hóa ngay lập tức. Bắt đầu từ ngày <strong class="font-semibold">01/01/2026</strong>, mô hình <strong class="font-semibold">chính quyền địa phương 02 cấp</strong> (theo <strong class="font-semibold">Nghị quyết 303/NQ-CP</strong>) được triển khai, các dự án đầu tư công quy mô nhỏ sẽ do <strong class="font-semibold">UBND cấp xã quyết định đầu tư</strong>. Thẩm quyền quản lý nhà nước về QLCL sẽ được phân cấp mạnh mẽ cho 94 đơn vị cơ sở này, thể hiện qua:
+                </p>
+                <ul class="list-disc list-inside mb-4 pl-4 space-y-2">
+                    <li><strong class="font-semibold">Quyết định số 71/2025/QĐ-UBND:</strong> Phân cấp cho UBND cấp xã tổ chức thẩm định Báo cáo NCKT và Thiết kế xây dựng.</li>
+                    <li><strong class="font-semibold">Quyết định số 63/2025/QĐ-UBND:</strong> Phân cấp cho cơ quan chuyên môn cấp xã thực hiện kiểm tra công tác nghiệm thu.</li>
+                    <li><strong class="font-semibold">Văn bản số 1034/STC-DAĐTC:</strong> Hướng dẫn toàn bộ 10 Mục quy trình thủ tục cho mô hình mới này.</li>
+                </ul>
+                <p class="mb-4">
+                    Do đó, BQLDA Chuyên ngành (với vai trò Chủ đầu tư được UBND cấp xã giao) cần một hệ thống quản lý tích hợp, vừa tuân thủ Quy trình ISO 9001, vừa đáp ứng khung pháp lý phân cấp phức tạp cho 94 ĐVHC mới.
+                </p>
+            </section>
+            <!-- === KẾT THÚC KHÔI PHỤC MỤC 1 === -->
+
+            <!-- 2. CƠ SỞ LÝ THUYẾT VÀ KHUNG PHÁP LÝ -->
+            <!-- === THÊM ID CHO SECTION === -->
+            <section id="phuong-phap">
+                <h2>2. CƠ SỞ LÝ THUYẾT VÀ KHUNG PHÁP LÝ</h2>
+                
+                <h3>2.1. Tiếp cận Quản lý Chất lượng (ISO 9001 & KCL)</h3>
+                <p class="mb-4">
+                    Hệ thống QLCL theo Tiêu chuẩn ISO 9001:2015 được xây dựng dựa trên 10 điều khoản cấu trúc theo chu trình PDCA (Plan-Do-Check-Act). Tuy nhiên, nhiều nghiên cứu chỉ ra các rào cản khi áp dụng ISO 9001 trong xây dựng: các khái niệm bị cho là "quá trừu tượng và quá khó hiểu", lo ngại về "nhiều thủ tục giấy tờ", và việc áp dụng chỉ giới hạn tại văn phòng công ty thay vì công trường [1].
+                </p>
+
+                <!-- === BỔ SUNG HÌNH ẢNH PDCA === -->
+                <figure class="my-6 max-w-md mx-auto">
+                    <!-- Sử dụng hình ảnh PDCA tương tự từ một nguồn web ổn định -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/PDCA_Cycle.svg/1200px-PDCA_Cycle.svg.png" 
+                         alt="Sơ đồ chu trình PDCA (Plan-Do-Check-Act)" 
+                         class="w-full h-auto rounded-lg shadow-md border border-gray-200"
+                         onerror="this.src='https://placehold.co/600x600/e0e0e0/757575?text=PDCA+Cycle'; this.onerror=null;">
+                    <figcaption class="text-center text-sm text-gray-600 mt-2 italic">
+                        Hình 1: Chu trình PDCA (Plan-Do-Check-Act)
+                    </figcaption>
+                </figure>
+                <!-- === KẾT THÚC BỔ SUNG === -->
+
+                <p class="mb-4">
+                    Nghiên cứu của Pyzdek T (được trích dẫn trong [1]) cho rằng hơn 80% chi phí và các vấn đề chất lượng xuất hiện ngay ở giai đoạn đầu (lập dự án, thiết kế). Để giải quyết vấn đề này, lý thuyết <strong class="font-semibold">Phát triển Chức năng Chất lượng (QFD)</strong> được áp dụng, sử dụng ma trận "Ngôi nhà Chất lượng" (HoQ) để chuyển "Yêu cầu của Chủ đầu tư" (thường là định tính) thành các "Đặc trưng Kỹ thuật" (định lượng).
+                </p>
+                <p class="mb-4">
+                    Từ đó, giải pháp thực tiễn là xây dựng một <strong class="font-semibold">Kế hoạch Chất lượng Công trình (KCL)</strong> – đây chính là sự cụ thể hóa hệ thống ISO 9001 cho một dự án cụ thể. Nội dung quan trọng nhất của KCL là <strong class="font-semibold">Kế hoạch Nghiệm thu/Thí nghiệm (KNT)</strong>, trong đó liệt kê các tiêu chí kỹ thuật quan trọng cần kiểm soát, giúp phòng ngừa sự cố thay vì chỉ phát hiện và sửa chữa.
+                </p>
+
+                <h3>2.2. Khung pháp lý cốt lõi (Trích yếu)</h3>
+                <p class="mb-4">
+                    Quy trình trong báo cáo này tuân thủ các văn bản pháp lý sau (xem chi tiết tại Mục 7. Tài liệu tham khảo):
+                </p>
+                <ul class="list-disc list-inside mb-4 pl-4 space-y-2">
+                    <li>Chủ trương & Tái cấu trúc: [2], [4], [5], [19], [20].</li>
+                    <li>Quản lý Chất lượng (ISO & Pháp lý): [1], [6], [7].</li>
+                    <li>Pháp lý chuyên ngành: [8], [9] (PCCC); [10] (Quy hoạch); [11] (Đấu thầu); [12] (Quyết toán).</li>
+                    <li>Văn bản hướng dẫn & Phân cấp (Đà Nẵng): [3], [13], [14], [15], [16].</li>
+                </ul>
+            </section>
+
+            <!-- 3. PHÂN TÍCH QUY TRÌNH QUẢN LÝ TÍCH HỢP (THEO PDCA) -->
+            <!-- === THÊM ID CHO SECTION === -->
+            <section id="ket-qua">
+                <h2>3. PHÂN TÍCH QUY TRÌNH QUẢN LÝ TÍCH HỢP (THEO PDCA)</h2>
+                <p class="mb-4">
+                    Quy trình 8 bước của BQLDA Chuyên ngành được hệ thống hóa theo 4 giai đoạn của <strong class="font-semibold">Quy trình ISO (PDCA)</strong>, bám sát 10 Mục của <strong class="font-semibold">Văn bản số 1034/STC-DAĐTC</strong>.
+                </p>
+                
+                <!-- Bảng Quy trình 8 bước -->
+                <div class="overflow-x-auto shadow-md rounded-lg">
+                    <table class="min-w-full text-sm">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="w-1/12">TT</th>
+                                <th class="w-4/12">Công việc</th>
+                                <th class="w-3/12">Cơ quan/ cá nhân chịu trách nhiệm thực hiện</th>
+                                <th class="w-2/12">Thời gian thực hiện</th>
+                                <th class="w-3/12">Ghi chú (Căn cứ ISO & Pháp lý Phân cấp)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <!-- GIAI ĐOẠN PLAN -->
+                            <!-- Thay đổi: Dùng màu 'sky' cho sinh động -->
+                            <tr class="bg-sky-50">
+                                <td class="font-bold">A</td>
+                                <td colspan="4" class="font-bold text-sky-800">
+                                    GIAI ĐOẠN PLAN (HOẠCH ĐỊNH) (ISO 9001: Điều khoản 4, 5, 6, 7 )
+                                    <p class="font-normal italic">(Giai đoạn này quyết định 80% chất lượng [1])</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">1</td>
+                                <td class="font-semibold">Chuẩn bị đầu tư, Pháp lý & Giao nhiệm vụ</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành), UBND xã, phường.</td>
+                                <td>(Tổng hợp nhiều bước)</td>
+                                <td>(Tổng hợp Mục I, II, III, IV - VB 1034)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>a) Lập, Thẩm định, Phê duyệt Chủ trương đầu tư.</td>
+                                <td>UBND xã, phường; Cơ quan C/M tài chính cấp xã.</td>
+                                <td>40 ngày làm việc.</td>
+                                <td>(Mục I, Văn bản số 1034/STC-DAĐTC) .</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>b) Giao nhiệm vụ Chủ đầu tư.</td>
+                                <td>Chủ tịch UBND cấp xã (Giao BQLDA Chuyên ngành).</td>
+                                <td>05 ngày làm việc.</td>
+                                <td>(Theo Luật Xây dựng & Mục I, VB 1034).</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>c) Lập, Phê duyệt KHLCNT GĐ 1 (Tư vấn).</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành).</td>
+                                <td>08 ngày làm việc.</td>
+                                <td>(Mục II, Văn bản số 1034/STC-DAĐTC) .</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>d) Thực hiện thủ tục Quy hoạch (theo Nghị định 178/2025/NĐ-CP) và Môi trường.</td>
+                                <td>Chủ đầu tư; Cơ quan QLXD & UBND cấp xã.</td>
+                                <td>(Theo quy trình riêng)</td>
+                                <td>(Mục III, IV, Văn bản số 1034/STC-DAĐTC) .</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">2</td>
+                                <td class="font-semibold">Lập Báo cáo NCKT / KT–KT & GPMB (Hoạch định chi tiết )</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành), tư vấn lập dự án, tư vấn thẩm tra (nếu có).</td>
+                                <td>30–45 ngày (tùy loại hình).</td>
+                                <td>Căn cứ: QĐ số 71/2025/QĐ-UBND; VB số 6233/SXD-QLXD; Mục V (VB 1034).</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>a) Tổ chức khảo sát, lập Báo cáo NCKT.</td>
+                                <td></td>
+                                <td></td>
+                                <td>(Theo Nghị định 06/2021/NĐ-CP).</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>b) Tổ chức thẩm tra Báo cáo NCKT (Hoạch định giải quyết rủi ro):</td>
+                                <td colspan="2">
+                                    - Chủ động thẩm tra (dự án trọng điểm, PCCC, ảnh hưởng an toàn CĐ).
+                                    <br>- Chỉ thẩm tra khi có văn bản yêu cầu của cơ quan thẩm định.
+                                </td>
+                                <td>(VB số 6233/SXD-QLXD)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>c) Trình hồ sơ thẩm định Báo cáo NCKT/KT-KT (bao gồm PCCC phần xây dựng ).</td>
+                                <td>Cơ quan QLXD thuộc UBND cấp xã.</td>
+                                <td>15-25 ngày.</td>
+                                <td>Phân cấp theo Quyết định số 71/2025/QĐ-UBND .</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>d) Trình hồ sơ thẩm định PCCC (phần thiết bị ).</td>
+                                <td>Cơ quan Công an (Thẩm định).</td>
+                                <td></td>
+                                <td>(Theo Luật PCCC 2024 & NĐ 105/2025/NĐ-CP).</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>e) Trình phê duyệt dự án (Quyết định đầu tư).</td>
+                                <td>Chủ tịch UBND cấp xã.</td>
+                                <td>05 ngày làm việc.</td>
+                                <td>Phân cấp theo Quyết định số 71/2025/QĐ-UBND.</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>f) Tổ chức bồi thường, GPMB, rà phá bom mìn.</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành).</td>
+                                <td>(Theo tiến độ dự án)</td>
+                                <td>(Mục V, Văn bản số 1034/STC-DAĐTC) .</td>
+                            </tr>
+
+                            <!-- GIAI ĐOẠN DO -->
+                            <!-- Thay đổi: Dùng màu 'emerald' cho sinh động -->
+                            <tr class="bg-emerald-50">
+                                <td class="font-bold">B</td>
+                                <td colspan="4" class="font-bold text-emerald-800">GIAI ĐOẠN DO (THỰC HIỆN) (ISO 9001: Điều khoản 8: Vận hành)</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">3</td>
+                                <td class="font-semibold">Thiết kế kỹ thuật – BVTC (Thiết kế & Phát triển SP)</td>
+                                <td>Tư vấn thiết kế, Chủ đầu tư (BQLDA Chuyên ngành).</td>
+                                <td>20–40 ngày (tùy cấp công trình).</td>
+                                <td>Căn cứ: Mục VII (Văn bản số 1034/STC-DAĐTC) .</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="4">Lập, rà soát hồ sơ thiết kế, dự toán (KCL, KNT, QTBP phải được lập từ bước này).</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">4</td>
+                                <td class="font-semibold">Tổ chức lựa chọn nhà thầu (Kiểm soát quá trình thuê ngoài)</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành), tư vấn đấu thầu.</td>
+                                <td>25–35 ngày (từ khi duyệt KHLCNT).</td>
+                                <td>Căn cứ: NĐ 214/2025/NĐ-CP; Mục VI, VIII (VB 1034) .</td>
+                            </tr>
+                             <tr>
+                                <td></td>
+                                <td colspan="4">Chủ đầu tư (BQLDA Chuyên ngành) chịu trách nhiệm toàn bộ về công tác lựa chọn nhà thầu (KHLCNT GĐ 2 và GĐ 3).</td>
+                            </tr>
+                             <tr>
+                                <td class="font-bold">6</td>
+                                <td class="font-semibold">Thi công xây dựng (Sản xuất và cung cấp dịch vụ )</td>
+                                <td>Nhà thầu thi công, tư vấn giám sát, Chủ đầu tư (BQLDA Chuyên ngành).</td>
+                                <td>Theo tiến độ hợp đồng (3–24 tháng).</td>
+                                <td>Căn cứ: Mục VIII (VB 1034) ; NĐ 06/2021/NĐ-CP.</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="4">a) Tổ chức thi công (theo KCL, KNT, QTBP đã duyệt); Giám sát, kiểm soát vật tư; Đảm bảo ATLĐ.</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>b) Kiểm tra công tác nghiệm thu trong quá trình thi công.</td>
+                                <td>Cơ quan QLXD thuộc UBND cấp xã.</td>
+                                <td>(Trong quá trình thi công)</td>
+                                <td>(Mục VIII, Văn bản số 1034/STC-DAĐTC) .</td>
+                            </tr>
+
+                            <!-- GIAI ĐOẠN CHECK -->
+                            <!-- Thay đổi: Dùng màu 'amber' cho sinh động -->
+                            <tr class="bg-amber-50">
+                                <td class="font-bold">C</td>
+                                <td colspan="4" class="font-bold text-amber-800">
+                                    GIAI ĐOẠN CHECK (KIỂM TRA & HOÀN TẤT) (ISO 9001: Điều khoản 9: Đánh giá )
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">5</td>
+                                <td class="font-semibold">Thẩm tra, Phê duyệt TK – DT (Kiểm soát thiết kế)</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành), tư vấn thẩm tra, cơ quan thẩm định (cấp xã).</td>
+                                <td>15–30 ngày (từ khi nộp hồ sơ hợp lệ).</td>
+                                <td>Căn cứ: QĐ số 71/2025/QĐ-UBND; VB số 6233/SXD-QLXD.</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>a) Tổ chức thẩm tra thiết kế/dự toán (sau thiết kế cơ sở):</td>
+                                <td colspan="2">
+                                    - Bắt buộc thẩm tra (công trình ảnh hưởng lớn đến an toàn).
+                                    <br>- Chủ động thẩm tra (dự án trọng điểm, PCCC).
+                                    <br>- Thẩm tra khi có yêu cầu (các dự án khác).
+                                </td>
+                                <td>(VB số 6233/SXD-QLXD)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>b) Trình hồ sơ thẩm định thiết kế/dự toán (bao gồm PCCC phần xây dựng).</td>
+                                <td>Cơ quan QLXD thuộc UBND cấp xã.</td>
+                                <td>20-30 ngày.</td>
+                                <td>Phân cấp theo Quyết định số 71/2025/QĐ-UBND .</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>c) Trình hồ sơ thẩm định PCCC (phần thiết bị).</td>
+                                <td>Cơ quan Công an (Thẩm định).</td>
+                                <td></td>
+                                <td>(Theo Luật PCCC 2024).</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>d) Phê duyệt thiết kế - dự toán.</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành) (Tự phê duyệt sau khi có KQ thẩm định của cả 2 cơ quan).</td>
+                                <td>05 ngày làm việc.</td>
+                                <td>(Theo Mục VII, Văn bản số 1034/STC-DAĐTC ).</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">7</td>
+                                <td class="font-semibold">Nghiệm thu, Quyết toán, Bàn giao (Thông qua sản phẩm)</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành), nhà thầu, tư vấn giám sát, các cơ quan thẩm định.</td>
+                                <td>(Tổng hợp nhiều bước)</td>
+                                <td>Căn cứ: Mục IX, X (VB 1034) ; QĐ số 63/2025/QĐ-UBND; NĐ 254/2025/NĐ-CP.</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>a) Tổ chức nghiệm thu hoàn thành công trình; Lập hồ sơ hoàn công.</td>
+                                <td></td>
+                                <td></td>
+                                <td>(Theo NĐ 06/2021/NĐ-CP & TT 10/2021/TT-BXD).</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>b) Đề nghị kiểm tra công tác nghiệm thu (Đánh giá nội bộ/bên ngoài ).</td>
+                                <td>Cơ quan QLXD thuộc UBND cấp xã (Thực hiện kiểm tra).</td>
+                                <td>20 ngày.</td>
+                                <td>Phân cấp theo Điều 4, Khoản 5, Quyết định số 63/2025/QĐ-UBND .</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>c) Lập hồ sơ Quyết toán dự án hoàn thành.</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành).</td>
+                                <td>4-6 tháng.</td>
+                                <td>(Theo Nghị định 254/2025/NĐ-CP).</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>d) Trình thẩm tra Quyết toán.</td>
+                                <td>Cơ quan C/M tài chính thuộc UBND xã, phường.</td>
+                                <td>3-4 tháng.</td>
+                                <td>(Mục X, Văn bản số 1034/STC-DAĐTC) .</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>e) Trình phê duyệt Quyết toán.</td>
+                                <td>Chủ tịch UBND xã, phường.</td>
+                                <td>15-20 ngày.</td>
+                                <td>(Mục X, Văn bản số 1034/STC-DAĐTC) .</td>
+                            </tr>
+
+                            <!-- GIAI ĐOẠN ACT -->
+                            <!-- Thay đổi: Dùng màu 'rose' cho sinh động -->
+                            <tr class="bg-rose-50">
+                                <td class="font-bold">D</td>
+                                <td colspan="4" class="font-bold text-rose-800">GIAI ĐOẠN ACT (CẢI TIẾN) (ISO 9001: Điều khoản 10: Cải tiến)</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">8</td>
+                                <td class="font-semibold">Bảo hành, bảo trì công trình (Hành động khắc phục )</td>
+                                <td>Chủ đầu tư (BQLDA Chuyên ngành), đơn vị bảo hành/bảo trì.</td>
+                                <td>Trong thời gian bảo hành (12–24 tháng).</td>
+                                <td>Căn cứ: NĐ 06/2021/NĐ-CP; TT 10/2021/TT-BXD.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. BÀI HỌC VÀ KHUYẾN NGHỊ (MỤC MỚI) -->
+            <section>
+                <h2>4. BÀI HỌC VÀ KHUYẾN NGHỊ ĐỂ XÂY DỰNG KCL HIỆU QUẢ</h2>
+
+                <!-- === BỔ SUNG HÌNH ẢNH XÂY DỰNG === -->
+                <figure class="my-6">
+                    <!-- Sử dụng hình ảnh placeholder cho hình ảnh được tải lên -->
+                    <img src="https://assets.entrepreneur.com/content/3x2/2000/20191219164033-GettyImages-1049089938.jpeg" 
+                         alt="Quản lý chất lượng dự án xây dựng" 
+                         class="w-full h-auto rounded-lg shadow-md border border-gray-200"
+                         onerror="this.src='https://placehold.co/800x450/e0e0e0/757575?text=Qu%E1%BA%A3n+l%C3%BD+d%E1%BB%B1+%C3%A1n+x%C3%A2y+d%E1%BB%B1ng'; this.onerror=null;">
+                    <figcaption class="text-center text-sm text-gray-600 mt-2 italic">
+                        Hình 2: Quản lý chất lượng là nền tảng của dự án đầu tư công
+                    </figcaption>
+                </figure>
+                <!-- === KẾT THÚC BỔ SUNG === -->
+
+                <p class="mb-4">
+                    Từ phân tích lý thuyết và thực tế [1], bài báo rút ra một số bài học và khuyến nghị then chốt để xây dựng kế hoạch chất lượng hiệu quả:
+                </p>
+                
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">a) Vai trò của Con người và Tổ chức</h3>
+                <p class="mb-4">
+                    Cần xây dựng sơ đồ tổ chức công trường khoa học, phân định rõ trách nhiệm giữa quản lý chất lượng, an toàn và sản xuất. Nhân sự phụ trách chất lượng phải có đủ thẩm quyền để phát huy vai trò.
+                </p>
+
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">b) Chuyển hóa Yêu cầu thành Tiêu chí Kỹ thuật</h3>
+                <p class="mb-4">
+                    Việc chuyển đổi các yêu cầu định tính của chủ đầu tư thành các đặc trưng kỹ thuật và cuối cùng là các tiêu chí nghiệm thu có thể đo lường được là bước then chốt. Công việc này đòi hỏi kỹ sư có chuyên môn cao và kinh nghiệm.
+                </p>
+
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">c) Tính cụ thể và Minh bạch của Tài liệu</h3>
+                <p class="mb-4">
+                    Hệ thống quy trình, biện pháp thi công và KNT phải được xây dựng cụ thể, dễ hiểu, tránh tình trạng trừu tượng, gây khó khăn cho triển khai thực tế.
+                </p>
+
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">d) Truyền thông và Lãnh đạo</h3>
+                <p class="mb-4">
+                    Các cuộc họp giao ban đóng vai trò là kênh truyền thông hiệu quả, giúp đánh giá tiến độ, phát hiện sai lệch và điều chỉnh kế hoạch kịp thời. Sự cam kết của lãnh đạo là yếu tố sống còn.
+                </p>
+
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">e) Ra quyết định dựa trên Dữ liệu</h3>
+                <p class="mb-4">
+                    Cần sử dụng các công cụ thống kê để lượng hóa và đánh giá xu hướng chất lượng, từ đó có các quyết định phòng ngừa và cải tiến chính xác.
+                </p>
+
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">f) Đào tạo và Thay đổi Nhận thức</h3>
+                <p class="mb-4">
+                    Cần có kế hoạch đào tạo thường xuyên để thay đổi những quan niệm sai lầm về chất lượng và nâng cao năng lực cho đội ngũ kỹ sư hiện trường.
+                </p>
+            </section>
+
+            <!-- 5. THẢO LUẬN (ĐỔI SỐ TỪ 4 THÀNH 5) -->
+            <section>
+                <h2>5. THẢO LUẬN VỀ PHÂN ĐỊNH TRÁCH NHIỆM TRONG HỆ THỐNG QLCL</h2>
+                <p class="mb-4">
+                    Trong bối cảnh phân cấp 02 cấp, trách nhiệm của các bên được làm rõ:
+                </p>
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">Chủ đầu tư (BQLDA Chuyên ngành):</h3>
+                <ul class="list-disc list-inside mb-4 pl-4 space-y-2">
+                    <li>Giữ vai trò <strong class="font-semibold">"Sự lãnh đạo" (Điều 5 ISO 9001)</strong>, chịu trách nhiệm toàn diện về việc thiết lập và vận hành QMS, như được giao nhiệm vụ bởi người quyết định đầu tư (Chủ tịch UBND cấp xã).</li>
+                    <li>Chịu trách nhiệm lập <strong class="font-semibold">Kế hoạch chất lượng (KCL)</strong> và <strong class="font-semibold">Kế hoạch nghiệm thu (KNT)</strong>, đảm bảo chất lượng được "thiết kế" ngay từ đầu.</li>
+                    <li>Chịu trách nhiệm về "Hoạch định" (Điều 6), "Vận hành" (Điều 8) (bao gồm lựa chọn nhà thầu theo <strong class="font-semibold">Nghị định 214/2025/NĐ-CP</strong>) và "Đánh giá hoạt động" (Điều 9) (bao gồm tổ chức nghiệm thu (<strong class="font-semibold">Thông tư 10/2021/TT-BXD</strong>) và quản lý quyết toán (<strong class="font-semibold">Nghị định 254/2025/NĐ-CP</strong>)).</li>
+                </ul>
+
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">Nhà thầu Thi công:</h3>
+                <ul class="list-disc list-inside mb-4 pl-4 space-y-2">
+                    <li>Chịu trách nhiệm thực hiện "Vận hành" (Điều 8.5 ISO 9001), chịu trách nhiệm <strong class="font-semibold">trực tiếp</strong> về chất lượng thi công theo KCL và KNT đã được duyệt, QLCL nội bộ theo <strong class="font-semibold">Nghị định 06/2021/NĐ-CP</strong>, và thực hiện "Hành động khắc phục" (Điều 10.2) (bảo hành).</li>
+                </ul>
+
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">Nhà thầu Tư vấn (Thiết kế, Giám sát, Thẩm tra):</h3>
+                <ul class="list-disc list-inside mb-4 pl-4 space-y-2">
+                    <li>Đóng vai trò "Hỗ trợ" (Điều 7 ISO 9001) và là một phần của "Kiểm soát quá trình... thuê ngoài" (Điều 8.4) của Chủ đầu tư. Chịu trách nhiệm về chất lượng sản phẩm tư vấn của mình.</li>
+                </ul>
+                
+                <h3 class="font-semibold !text-lg !mt-4 !mb-2">Cơ quan Quản lý Nhà nước (UBND cấp xã, Cơ quan Công an):</h3>
+                <ul class="list-disc list-inside mb-4 pl-4 space-y-2">
+                    <li>Là một phần của "Bối cảnh của tổ chức" (Điều 4 ISO 9001), quy định các yêu cầu pháp lý bắt buộc.</li>
+                    <li><strong class="font-semibold">UBND cấp xã</strong> (và cơ quan chuyên môn trực thuộc) thực hiện thẩm quyền được phân cấp mạnh mẽ (theo <strong class="font-semibold">Nghị định 140/2025/NĐ-CP</strong>, <strong class="font-semibold">Quyết định số 71/2025/QĐ-UBND</strong>, <strong class="font-semibold">Quyết định số 63/2025/QĐ-UBND</strong> ) trong toàn bộ vòng đời dự án: từ phê duyệt chủ trương, thẩm định dự án (bao gồm PCCC phần xây dựng ), kiểm tra nghiệm thu, đến phê duyệt quyết toán.</li>
+                    <li><strong class="font-semibold">Cơ quan Công an</strong> chịu trách nhiệm thẩm định PCCC phần thiết bị theo <strong class="font-semibold">Luật PCCC và CNCH năm 2024</strong>.</li>
+                </ul>
+            </section>
+
+            <!-- 6. KẾT LUẬN (ĐỔI SỐ TỪ 5 THÀNH 6) -->
+            <!-- === THÊM ID CHO SECTION === -->
+            <section id="ket-luan">
+                <h2>6. KẾT LUẬN</h2>
+                <p class="mb-4">
+                    Việc phân cấp, phân quyền một cách khoa học và hợp lý có ý nghĩa then chốt trong nâng cao hiệu lực, hiệu quả quản lý nhà nước nói chung và đặc biệt quan trọng trong việc xây dựng một quy trình quản lý chất lượng đầu tư công hiện đại, minh bạch. Thực tiễn cho thấy, khi các bộ, ngành trung ương mạnh dạn phân cấp, phân quyền cho địa phương trong các khâu như phê duyệt dự án đầu tư, giám sát thi công, hay nghiệm thu công trình, đã tạo ra sự chủ động, linh hoạt, góp phần rút ngắn đáng kể thời gian và chi phí tuân thủ cho các chủ đầu tư và nhà thầu.
+                </p>
+                <p class="mb-4">
+                    Tuy nhiên, nguyên tắc <strong class="font-semibold">"phân quyền phải đi đôi với phân bổ nguồn lực"</strong> càng cần được đề cao. Muốn địa phương đảm bảo được chất lượng công trình từ khâu lập kế hoạch, thẩm định đến hoàn thành, bên cạnh việc giao quyền, cần phải trang bị cho họ đủ năng lực chuyên môn, kinh phí và công cụ quản lý phù hợp. Điều này gắn liền với tinh thần <strong class="font-semibold">"địa phương quyết, địa phương làm, địa phương chịu trách nhiệm"</strong> – nơi chính quyền địa phương phải gánh vác trách nhiệm toàn diện về chất lượng, tiến độ và hiệu quả của dự án trên địa bàn. Một quy trình quản lý chất lượng đầu tư công được phân cấp triệt để, rõ ràng như vậy sẽ tạo ra động lực mạnh mẽ, thúc đẩy phát triển kinh tế - xã hội của từng địa phương, góp phần kiến tạo một kỷ nguyên phát triển mới cho đất nước.
+                </p>
+                <p class="mb-4">
+                    Bối cảnh triển khai <strong class="font-semibold">chính quyền 02 cấp</strong> (<strong class="font-semibold">Nghị quyết 303/NQ-CP</strong>) đòi hỏi một sự thay đổi căn bản trong quy trình quản lý dự án đầu tư công. Giai đoạn 2025 là giai đoạn chuyển tiếp, với việc <strong class="font-semibold">Quyết định số 429/QĐ-UBND</strong> và <strong class="font-semibold">Quyết định số 1577/QĐ-UBND</strong> tái cấu trúc các BQLDA cấp thành phố và ủy quyền xử lý các dự án tồn đọng.
+                </p>
+                <p class="mb-4">
+                    Từ 01/01/2026, mô hình mới (dự án do cấp xã quyết định đầu tư) sẽ trao thẩm quyền toàn diện cho cơ sở (theo <strong class="font-semibold">Nghị định 140/2025/NĐ-CP</strong>, <strong class="font-semibold">Quyết định số 71/2025/QĐ-UBND</strong>, <strong class="font-semibold">Quyết định số 63/2025/QĐ-UBND</strong> và <strong class="font-semibold">Văn bản số 1034/STC-DAĐTC</strong>). Việc áp dụng một Hệ thống Quản lý Chất lượng chuẩn hóa theo <strong class="font-semibold">Quy trình ISO 9001 (PDCA)</strong> không còn là một lựa chọn, mà là một yêu cầu bắt buộc.
+                </p>
+                <p class="mb-4">
+                    Để thành công, hệ thống này phải được cụ thể hóa thành <strong class="font-semibold">Kế hoạch Chất lượng (KCL)</strong> và <strong class="font-semibold">Kế hoạch Nghiệm thu/Thí nghiệm (KNT)</strong> chi tiết cho từng dự án. Chỉ khi đó, QLCL mới thực sự là công cụ phòng ngừa rủi ro từ giai đoạn thiết kế, thay vì chỉ tốn kém khắc phục lỗi ở giai đoạn thi công.
+                </p>
+            </section>
+
+            <!-- 7. TÀI LIỆU THAM KHẢO (ĐỔI SỐ TỪ 6 THÀNH 7) -->
+            <!-- === THÊM ID CHO SECTION === -->
+            <section id="tai-lieu">
+                <h2>7. TÀI LIỆU THAM KHẢO</h2>
+                <div class="reference-list text-gray-700">
+                    <p data-ref="[1]">Cao Văn Hóa (2023). "Xây dựng hệ thống quản lý chất lượng cho các công trình xây dựng tại Việt Nam". <i>Tạp chí Xây dựng</i>, 06.2023.</p>
+                    <p data-ref="[2]">Chính phủ, (2025). <i>Nghị quyết số 303/NQ-CP: Chỉ đạo của Chính phủ về chính quyền địa phương 02 cấp</i>.</p>
+                    <p data-ref="[3]">Chính phủ, (2025). <i>Nghị định số 140/2025/NĐ-CP: Phân định thẩm quyền chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Xây dựng</i>.</p>
+                    <p data-ref="[4]">UBND TP Đà Nẵng, (2025). <i>Quyết định số 429/QĐ-UBND: Về việc điều chỉnh chủ đầu tư, đơn vị quản lý dự án... khi tổ chức chính quyền địa phương 02 cấp</i>.</p>
+                    <p data-ref="[5]">UBND TP Đà Nẵng, (2025). <i>Quyết định số 1577/QĐ-UBND: Về việc ủy quyền thực hiện một số nội dung về quản lý dự án đầu tư....</i></p>
+                    <p data-ref="[6]">Chính phủ, (2021). <i>Nghị định số 06/2021/NĐ-CP: Quy định chi tiết một số nội dung về quản lý chất lượng, thi công xây dựng và bảo trì công trình xây dựng</i>.</p>
+                    <p data-ref="[7]">Bộ Xây dựng, (2021). <i>Thông tư số 10/2021/TT-BXD: Hướng dẫn một số nội dung Nghị định 06/2021/NĐ-CP</i>.</p>
+                    <p data-ref="[8]">Quốc hội, (2024). <i>Luật Phòng cháy, chữa cháy và cứu nạn, cứu hộ năm 2024 (Luật số 55/2024/QH15)</i>.</p>
+                    <p data-ref="[9]">Chính phủ, (2025). <i>Nghị định số 105/2025/NĐ-CP: Hướng dẫn chi tiết Luật PCCC và CNCH năm 2024</i>.</p>
+                    <p data-ref="[10]">Chính phủ, (2025). <i>Nghị định số 178/2025/NĐ-CP: Hướng dẫn Luật Quy hoạch đô thị và nông thôn</i>.</p>
+                    <p data-ref="[11]">Chính phủ, (2025). <i>Nghị định số 214/2025/NĐ-CP: Hướng dẫn Luật Đấu thầu về lựa chọn nhà thầu</i>.</p>
+                    <p data-ref="[12]">Chính phủ, (2025). <i>Nghị định số 254/2025/NĐ-CP: Quy định về quản lý, thanh toán, quyết toán dự án sử dụng vốn đầu tư công</i>.</p>
+                    <p data-ref="[13]">Sở Tài chính Đà Nẵng, (2025). <i>Văn bản số 1034/STC-DAĐTC: V/v hướng dẫn quy trình thực hiện dự án đầu tư xây dựng... do UBND xã, phường quyết định chủ trương đầu tư</i>.</p>
+                    <p data-ref="[14]">UBND TP Đà Nẵng, (2025). <i>Quyết định số 71/2025/QĐ-UBND: Phân cấp thẩm định Báo cáo NCKT, Báo cáo KT-KT, Thiết kế xây dựng... do Chủ tịch UBND cấp xã quyết định đầu tư</i>.</p>
+                    <p data-ref="[15]">UBND TP Đà Nẵng, (2025). <i>Quyết định số 63/2025/QĐ-UBND: Ban hành Quy định về phân công, phân cấp trách nhiệm quản lý nhà nước về chất lượng công trình xây dựng....</i></p>
+                    <p data-ref="[16]">Sở Xây dựng Đà Nẵng, (2025). <i>Văn bản số 6233/SXD-QLXD: V/v liên quan công tác thẩm tra phục vụ thẩm định dự án, thiết kế xây dựng....</i></Văn></p>
+                    <p data-ref="[17]">Cục Kinh tế - Quản lý đầu tư xây dựng (Bộ Xây dựng), (2025). <i>Trả lời về việc xác định chủ đầu tư dự án sử dụng vốn đầu tư công</i>.</p>
+                    <p data-ref="[18]">Cục Kinh tế - Quản lý đầu tư xây dựng (Bộ Xây dựng), (2025). <i>Trả lời về thẩm định PCCC sau ngày 01/7/2025</i>.</p>
+                    <p data-ref="[19]">Báo Điện tử Chính phủ, (2025). <i>Sắp xếp ĐVHC: Danh sách 94 xã, phường, đặc khu của thành phố Đà Nẵng mới</i>. Truy cập từ: https://xaydungchinhsach.chinhphu.vn/...</p>
+                    <!-- === BỔ SUNG MỚI TÀI LIỆU THAM KHẢO [20] === -->
+                    <p data-ref="[20]">Báo Đầu tư, (2025). <i>Tái cấu trúc đưa đô thị Đà Nẵng vươn tầm thế giới</i>. Truy cập từ: https://baodautu.vn/...</p>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Chân trang -->
+        <footer class="text-center mt-12 border-t border-gray-200 pt-8">
+            <p class="text-gray-500 text-sm">
+                Báo cáo chuyên đề | Khoa Quản lý Dự án | ĐHBK - ĐHĐN | Tháng 11/2025
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
